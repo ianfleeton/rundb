@@ -1,0 +1,33 @@
+<%= form_for(@event) do |f| %>
+  <div class="form-field">
+    <%= f.label :title %>
+    <%= f.text_field :title, required: true %>
+  </div>
+  <div class="form-field">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+  <div class="form-field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div class="form-field">
+    <%= f.label :organiser %>
+    <%= f.text_field :organiser %>
+  </div>
+  <div class="form-field">
+    <%= f.label :starts_on %>
+    <%= f.date_field :starts_on %>
+  </div>
+  <div class="form-field">
+    <%= f.label :web %>
+    <%= f.url_field :web %>
+  </div>
+  <div class="form-field">
+    <%= f.label :reg %>
+    <%= f.url_field :reg %>
+  </div>
+  <div class="form-submit">
+    <%= f.submit %>
+  </div>
+<% end %>
