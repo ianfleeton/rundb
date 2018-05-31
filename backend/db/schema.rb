@@ -14,11 +14,11 @@ ActiveRecord::Schema.define(version: 2018_05_31_223050) do
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "title", null: false
-    t.string "city"
+    t.string "city", null: false
     t.text "description"
-    t.string "organiser"
-    t.date "starts_on"
-    t.string "web"
+    t.string "organiser", null: false
+    t.date "starts_on", null: false
+    t.string "web", null: false
     t.string "reg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

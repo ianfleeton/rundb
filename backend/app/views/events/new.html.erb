@@ -5,7 +5,7 @@
   </div>
   <div class="form-field">
     <%= f.label :city %>
-    <%= f.text_field :city %>
+    <%= f.text_field :city, required: true %>
   </div>
   <div class="form-field">
     <%= f.label :description %>
@@ -13,15 +13,15 @@
   </div>
   <div class="form-field">
     <%= f.label :organiser %>
-    <%= f.text_field :organiser %>
+    <%= f.text_field :organiser, required: true %>
   </div>
   <div class="form-field">
     <%= f.label :starts_on %>
-    <%= f.date_field :starts_on %>
+    <%= f.date_field :starts_on, required: true %>
   </div>
   <div class="form-field">
     <%= f.label :web %>
-    <%= f.url_field :web %>
+    <%= f.url_field :web, required: true %>
   </div>
   <div class="form-field">
     <%= f.label :reg %>
