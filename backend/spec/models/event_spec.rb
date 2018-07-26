@@ -9,8 +9,8 @@ RSpec.describe Event, type: :model do
 
   describe '.list' do
     it 'returns all events ordered by event start descending' do
-      e1 = FactoryBot.create(:event, starts_on: Time.current - 1.day)
-      e2 = FactoryBot.create(:event, starts_on: Time.current)
+      e1 = FactoryBot.create(:event, starts_on: Date.current - 1.day)
+      e2 = FactoryBot.create(:event, starts_on: Date.current)
       events = Event.list
       expect(events.first).to eq e2
       expect(events.last).to eq e1
