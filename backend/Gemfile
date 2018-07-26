@@ -41,6 +41,10 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Use RSpec as the testing framework.
   gem 'rspec-rails', '~> 3.7'
+  # Fixtures.
+  gem 'factory_bot_rails'
+  # Real-looking fake data.
+  gem 'faker'
 end
 
 group :development do
@@ -63,6 +67,8 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15', '< 4.0'
   gem 'selenium-webdriver'
+  # RSpec-compatible one-liners that test common Rails functionality.
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
