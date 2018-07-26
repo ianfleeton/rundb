@@ -21,4 +21,41 @@ RSpec.describe 'Events', type: :request do
       expect(response).to be_ok
     end
   end
+
+  describe 'POST /events' do
+    let(:reg) { Faker::Internet.url }
+    let(:web) { Faker::Internet.url }
+    let(:starts_on) { Date.current }
+
+    def post_valid
+      post(
+        '/events',
+        params: {
+          event: {
+            title: 'Round Donny Run', city: 'Doncaster', organiser: 'Tony',
+            description: 'A longer course than you would expect!',
+            reg: reg, starts_on: starts_on, web: web
+          }
+        }
+      )
+    end
+
+    it 'creates a new event' do
+      post_valid
+      expect(Event.count).to eq 1
+      event = Event.first
+      expect(event.title).to eq 'Round Donny Run'
+      expect(event.city).to eq 'Doncaster'
+      expect(event.organiser).to eq 'Tony'
+      expect(event.description).to eq 'A longer course than you would expect!'
+      expect(event.reg).to eq reg
+      expect(event.starts_on).to eq starts_on
+      expect(event.web).to eq web
+    end
+
+    it 'redirects to event index' do
+      post_valid
+      expect(response).to redirect_to events_path
+    end
+  end
 end

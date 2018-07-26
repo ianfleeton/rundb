@@ -4,6 +4,7 @@ RSpec.describe Event, type: :model do
   describe 'validations' do
     it { should validate_presence_of(:city) }
     it { should validate_presence_of(:organiser) }
+    it { should validate_presence_of(:starts_on) }
     it { should validate_presence_of(:web) }
   end
 

@@ -2,7 +2,7 @@
 
 class Event < ApplicationRecord
   # Validations.
-  validates_presence_of :city, :organiser, :web
+  validates_presence_of :city, :organiser, :starts_on, :web
 
   # Returns all events ordered by event start descending.
   def self.list
