@@ -3,9 +3,9 @@
 FactoryBot.define do
   factory :event do
     sequence(:title) { |n| "Title #{n}" }
-    starts_on Date.current
-    city Faker::Address.city
-    organiser Faker::Name.name
-    web Faker::Internet.url
+    starts_on { Date.current }
+    city { Faker::Address.city }
+    organiser { Faker::Name.name }
+    web { Faker::Internet.url }
   end
 end
