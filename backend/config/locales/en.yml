@@ -30,6 +30,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    attributes:
+      event:
+        reg: Registration URL
+        web: Website URL
+
   events:
     index:
       add_event: 'Add event'
