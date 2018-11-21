@@ -39,3 +39,7 @@ en:
   events:
     index:
       add_event: 'Add event'
+
+  layouts:
+    application:
+      meta_description: 'An app for listing and finding running events'
