@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :events, only: [:index, :new, :create]
+  namespace :api do
+    resources :events, only: [:index]
+  end
+
+  resources :events, only: %i[index new create]
 end
