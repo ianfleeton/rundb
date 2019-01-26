@@ -3,6 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe 'Events', type: :request do
+  include Devise::Test::IntegrationHelpers
+
+  before { sign_in Admin.new }
+
   describe 'GET /events' do
     it 'responds 200 OK' do
       e1 = FactoryBot.build_stubbed(:event, title: 'Round Donny Run')
