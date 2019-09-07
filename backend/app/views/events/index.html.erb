@@ -1,11 +1,19 @@
+<h2 class="title">Events</h2>
 <p>
-  <%= link_to t('.add_event'), new_event_path %>
+  <%= link_to t('.add_event'), new_event_path, class: "button is-primary" %>
 </p>
-<table>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Starts on</th>
+    </tr>
+  </thead>
   <tbody>
     <% @events.each do |event| -%>
     <tr>
       <td><%= event.title %></td>
+      <td><%= event.starts_on %></td>
     </tr>
     <% end -%>
   </tbody>
