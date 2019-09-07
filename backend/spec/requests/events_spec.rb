@@ -62,4 +62,18 @@ RSpec.describe 'Events', type: :request do
       expect(response).to redirect_to events_path
     end
   end
+
+  describe "GET /events/:id/edit" do
+    let(:event) { FactoryBot.create(:event) }
+
+    it "responds 200 OK" do
+      get "/events/#{event.id}/edit"
+      expect(response).to be_ok
+    end
+
+    it "renders a form to update the event" do
+      get "/events/#{event.id}/edit"
+      assert_select "form[action='#{event_path(event)}'][method=post]"
+    end
+  end
 end
